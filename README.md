@@ -11,7 +11,7 @@ pod install
 
 - ビルド後にシェイクジェスチャー(シミュレーターの場合 Command + Control + Z )で表示
 
-<img src="" width="320px">
+<img src="https://github.com/Econa77/SFHDebugToolKit/blob/master/Images/screenshot.png" width="320px">
 
 # インストール方法
 ```
