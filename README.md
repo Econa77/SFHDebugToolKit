@@ -15,7 +15,7 @@ pod install
 
 # インストール方法
 ```
-pod 'SFHDebugToolKit'
+pod 'SFHDebugToolKit', :git => 'https://github.com/Econa77/SFHDebugToolKit.git'
 ```
 
 # TODO
