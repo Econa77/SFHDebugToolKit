@@ -37,6 +37,3 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     }
 ```
 
-
-# TODO
-SwiftプロジェクトでDEBUGフラグが使用できているかチェックする
