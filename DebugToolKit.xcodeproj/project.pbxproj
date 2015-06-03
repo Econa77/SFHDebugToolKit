@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31013C0A1B1EC93F00EC6875 /* KTouchPointerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 31013C091B1EC93F00EC6875 /* KTouchPointerWindow.m */; };
 		31013C0E1B1EC9E800EC6875 /* SFHScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 31013C0D1B1EC9E800EC6875 /* SFHScreenRecorder.m */; };
+		31013C101B1ECAEE00EC6875 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31013C0F1B1ECAEE00EC6875 /* QuartzCore.framework */; };
+		31013C121B1ECAF400EC6875 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31013C111B1ECAF400EC6875 /* AVFoundation.framework */; };
+		31013C141B1ECAFC00EC6875 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31013C131B1ECAFC00EC6875 /* CoreVideo.framework */; };
+		31013C161B1ECB0000EC6875 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31013C151B1ECB0000EC6875 /* CoreMedia.framework */; };
+		31013C1A1B1ECF5800EC6875 /* KTouchPointerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 31013C191B1ECF5800EC6875 /* KTouchPointerWindow.m */; };
 		31100CD51B1D76AA004E1189 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31100CD41B1D76AA004E1189 /* main.m */; };
 		31100CD81B1D76AA004E1189 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31100CD71B1D76AA004E1189 /* AppDelegate.m */; };
 		31100CDB1B1D76AA004E1189 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31100CDA1B1D76AA004E1189 /* ViewController.m */; };
@@ -17,6 +21,7 @@
 		31100CE31B1D76AA004E1189 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31100CE11B1D76AA004E1189 /* LaunchScreen.xib */; };
 		31100CEF1B1D76AA004E1189 /* DebugToolKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31100CEE1B1D76AA004E1189 /* DebugToolKitTests.m */; };
 		313EA9E71B1D94C10020CA7C /* SFHDebugToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 313EA9E61B1D94C10020CA7C /* SFHDebugToolKit.m */; };
+		31612C811B1EE8A40046B4B2 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31612C801B1EE8A40046B4B2 /* AssetsLibrary.framework */; };
 		A68CE4317EED2A07B87F8C30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD64D8F62DD257986CBB44C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -33,10 +38,14 @@
 /* Begin PBXFileReference section */
 		0DFFA05A645ACB659487808C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1DD64D8F62DD257986CBB44C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		31013C081B1EC93F00EC6875 /* KTouchPointerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTouchPointerWindow.h; sourceTree = "<group>"; };
-		31013C091B1EC93F00EC6875 /* KTouchPointerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTouchPointerWindow.m; sourceTree = "<group>"; };
 		31013C0C1B1EC9E800EC6875 /* SFHScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHScreenRecorder.h; sourceTree = "<group>"; };
 		31013C0D1B1EC9E800EC6875 /* SFHScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHScreenRecorder.m; sourceTree = "<group>"; };
+		31013C0F1B1ECAEE00EC6875 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		31013C111B1ECAF400EC6875 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		31013C131B1ECAFC00EC6875 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		31013C151B1ECB0000EC6875 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		31013C181B1ECF5800EC6875 /* KTouchPointerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTouchPointerWindow.h; sourceTree = "<group>"; };
+		31013C191B1ECF5800EC6875 /* KTouchPointerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTouchPointerWindow.m; sourceTree = "<group>"; };
 		31100CCF1B1D76AA004E1189 /* DebugToolKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebugToolKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31100CD31B1D76AA004E1189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31100CD41B1D76AA004E1189 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,6 +61,7 @@
 		31100CEE1B1D76AA004E1189 /* DebugToolKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebugToolKitTests.m; sourceTree = "<group>"; };
 		313EA9E51B1D94C10020CA7C /* SFHDebugToolKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHDebugToolKit.h; sourceTree = "<group>"; };
 		313EA9E61B1D94C10020CA7C /* SFHDebugToolKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHDebugToolKit.m; sourceTree = "<group>"; };
+		31612C801B1EE8A40046B4B2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		71DD5F472A7BEB6564F2F133 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +70,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31612C811B1EE8A40046B4B2 /* AssetsLibrary.framework in Frameworks */,
+				31013C161B1ECB0000EC6875 /* CoreMedia.framework in Frameworks */,
+				31013C141B1ECAFC00EC6875 /* CoreVideo.framework in Frameworks */,
+				31013C121B1ECAF400EC6875 /* AVFoundation.framework in Frameworks */,
+				31013C101B1ECAEE00EC6875 /* QuartzCore.framework in Frameworks */,
 				A68CE4317EED2A07B87F8C30 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,18 +92,14 @@
 		19D72C4488E05F74DF7F21EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31612C801B1EE8A40046B4B2 /* AssetsLibrary.framework */,
+				31013C151B1ECB0000EC6875 /* CoreMedia.framework */,
+				31013C131B1ECAFC00EC6875 /* CoreVideo.framework */,
+				31013C111B1ECAF400EC6875 /* AVFoundation.framework */,
+				31013C0F1B1ECAEE00EC6875 /* QuartzCore.framework */,
 				1DD64D8F62DD257986CBB44C /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		31013C071B1EC91000EC6875 /* KTouchPointerWindow */ = {
-			isa = PBXGroup;
-			children = (
-				31013C081B1EC93F00EC6875 /* KTouchPointerWindow.h */,
-				31013C091B1EC93F00EC6875 /* KTouchPointerWindow.m */,
-			);
-			path = KTouchPointerWindow;
 			sourceTree = "<group>";
 		};
 		31013C0B1B1EC9D700EC6875 /* ScreenRecorder */ = {
@@ -98,6 +109,15 @@
 				31013C0D1B1EC9E800EC6875 /* SFHScreenRecorder.m */,
 			);
 			path = ScreenRecorder;
+			sourceTree = "<group>";
+		};
+		31013C171B1ECF4000EC6875 /* KTouchPointerWindow */ = {
+			isa = PBXGroup;
+			children = (
+				31013C181B1ECF5800EC6875 /* KTouchPointerWindow.h */,
+				31013C191B1ECF5800EC6875 /* KTouchPointerWindow.m */,
+			);
+			path = KTouchPointerWindow;
 			sourceTree = "<group>";
 		};
 		31100CC61B1D76AA004E1189 = {
@@ -176,7 +196,7 @@
 				313EA9E51B1D94C10020CA7C /* SFHDebugToolKit.h */,
 				313EA9E61B1D94C10020CA7C /* SFHDebugToolKit.m */,
 				31013C0B1B1EC9D700EC6875 /* ScreenRecorder */,
-				31013C071B1EC91000EC6875 /* KTouchPointerWindow */,
+				31013C171B1ECF4000EC6875 /* KTouchPointerWindow */,
 			);
 			path = SFHDegubToolKit;
 			sourceTree = SOURCE_ROOT;
@@ -327,8 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				31100CDB1B1D76AA004E1189 /* ViewController.m in Sources */,
+				31013C1A1B1ECF5800EC6875 /* KTouchPointerWindow.m in Sources */,
 				31013C0E1B1EC9E800EC6875 /* SFHScreenRecorder.m in Sources */,
-				31013C0A1B1EC93F00EC6875 /* KTouchPointerWindow.m in Sources */,
 				31100CD81B1D76AA004E1189 /* AppDelegate.m in Sources */,
 				313EA9E71B1D94C10020CA7C /* SFHDebugToolKit.m in Sources */,
 				31100CD51B1D76AA004E1189 /* main.m in Sources */,
@@ -459,6 +479,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DebugToolKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -470,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DebugToolKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
