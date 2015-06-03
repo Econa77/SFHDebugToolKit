@@ -147,17 +147,21 @@ CVReturn CVPixelBufferCreateWithIOSurface(
         KTouchPointerWindowUninstall();
     }
     
-    if (self.writer.status != AVAssetWriterStatusCompleted && self.writer.status != AVAssetWriterStatusUnknown) {
-        [self.writerInput markAsFinished];
-    }
-    [self.writer finishWritingWithCompletionHandler:^{
-        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        if ([library videoAtPathIsCompatibleWithSavedPhotosAlbum:self.writer.outputURL]) {
-            [library writeVideoAtPathToSavedPhotosAlbum:self.writer.outputURL completionBlock:^(NSURL *assetURL, NSError *error) {
-            }];
-        }
-        
-    }];
+    dispatch_async(queue, ^
+                   {
+                       if (self.writer.status != AVAssetWriterStatusCompleted && self.writer.status != AVAssetWriterStatusUnknown) {
+                           [self.writerInput markAsFinished];
+                       }
+                       [self.writer finishWritingWithCompletionHandler:^{
+                           ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+                           if ([library videoAtPathIsCompatibleWithSavedPhotosAlbum:self.writer.outputURL]) {
+                               [library writeVideoAtPathToSavedPhotosAlbum:self.writer.outputURL completionBlock:^(NSURL *assetURL, NSError *error) {
+                               }];
+                           }
+                           
+                       }];
+                   });
+
 }
 
 - (BOOL)isRecording {
