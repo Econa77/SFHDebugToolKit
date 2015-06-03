@@ -14,15 +14,16 @@ pod install
 
 # インストール方法
 ```
-pod 'FLEX', :configurations => ['Debug']
-pod 'SFHDebugToolKit', :git => 'git@github.com:Econa77/SFHDebugToolKit.git'
+pod 'SFHDebugToolKit', :git => 'git@github.com:Econa77/SFHDebugToolKit.git', :configurations => ['Debug']
 ```
 
 # 使用方法
 Objective-C
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+#if DEBUG
     [SFHDebugToolKit setupToolKit];
+#endif
     return YES;
 }
 ```
