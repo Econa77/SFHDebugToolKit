@@ -2,6 +2,7 @@
 - Debug用ToolKitをまとめたもの
 - Debugビルドのみ使用可能
 - 現在はFLEXのみサポート
+    - FLEXとは（http://natsuapps.com/note/2014/08/flex-dev-tool.html）
 
 # サンプルプロジェクト
 ```
