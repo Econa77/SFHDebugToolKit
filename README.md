@@ -36,12 +36,17 @@ Objective-C
 ```
 
 Swift
-``` BridgeHeader
+- Add "-D DEBUG" flag in " Swift Compiler - Custom Flags - Other Swift Flags - DEBUG "
+```
+#if
 #import "SFHDebugToolKit.h"
+#endif
 ```
 ```
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    SFHDebugToolKit.setupToolKit()
+    #if DEBUG
+        SFHDebugToolKit.setupToolKit()
+    #endif
     return true
 }
 ```
