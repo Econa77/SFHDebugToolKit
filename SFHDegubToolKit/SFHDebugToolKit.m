@@ -110,9 +110,17 @@
 
 #pragma mark - Private Methods
 - (CGRect)viewFrame {
-    
+
     CGFloat width = CGRectGetWidth([UIScreen mainScreen].bounds);
     CGFloat height = CGRectGetHeight([UIScreen mainScreen].bounds);
+    
+    if ([SFHDebugToolKit isIOS7]) {
+        UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+        if (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft) {
+            width = CGRectGetHeight([UIScreen mainScreen].bounds);
+            height = CGRectGetWidth([UIScreen mainScreen].bounds);
+        }
+    }
     
     return CGRectMake(0, height - 50.0, width, 50.0f);
 }
@@ -149,6 +157,11 @@
                 break;
         }
         self.overlayView.transform = CGAffineTransformMakeRotation(rotateAngle);
+        if (orientation == UIInterfaceOrientationLandscapeLeft) {
+            self.overlayView.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 50.0f, 0, CGRectGetWidth(self.overlayView.frame), CGRectGetHeight(self.overlayView.frame));
+        } else if (orientation == UIInterfaceOrientationLandscapeRight) {
+            self.overlayView.frame = CGRectMake(0, 0, CGRectGetWidth(self.overlayView.frame), CGRectGetHeight(self.overlayView.frame));
+        }
     }
 }
 
@@ -177,7 +190,7 @@
     if(!_overlayView) {
         _overlayView = [[UIControl alloc] initWithFrame:[self viewFrame]];
         _overlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        _overlayView.backgroundColor = [UIColor redColor];
+        _overlayView.backgroundColor = [UIColor clearColor];
         _overlayView.userInteractionEnabled = YES;
     }
     return _overlayView;
