@@ -129,6 +129,14 @@
     return YES;
 }
 
+- (void)stopRecording {
+#if DEBUG 
+    if ([[SFHScreenRecorder sharedRecorder] isRecording]) {
+        [self switchRecorde];
+    }
+#endif
+}
+
 #pragma mark - NSNotification
 - (void)willChangeStatusBarFrame:(NSNotification *)notification {
     
@@ -166,9 +174,7 @@
 }
 
 - (void)applicationDidEnterBackground:(NSNotification *)notification {
-    if ([[SFHScreenRecorder sharedRecorder] isRecording]) {
-        [self switchRecorde];
-    }
+    [self stopRecording];
 }
 
 #pragma mark - Share Methods
@@ -178,9 +184,7 @@
             [[SFHDebugToolKit sharedToolKit] show];
         } else {
             [[SFHDebugToolKit sharedToolKit] dismiss];
-            if ([[SFHScreenRecorder sharedRecorder] isRecording]) {
-                [self switchRecorde];
-            }
+            [self stopRecording];
         }
     }
 }
