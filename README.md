@@ -23,7 +23,7 @@ pod 'SFHDebugToolKit', :git => 'git@github.com:Econa77/SFHDebugToolKit.git', :co
 # 使用方法
 Objective-C
 ```
-#if
+#if DEBUG
 #import "SFHDebugToolKit.h"
 #endif
 
@@ -38,7 +38,7 @@ Objective-C
 Swift
 - Add "-D DEBUG" flag in " Swift Compiler - Custom Flags - Other Swift Flags - DEBUG "
 ```
-#if
+#if DEBUG
 #import "SFHDebugToolKit.h"
 #endif
 ```
