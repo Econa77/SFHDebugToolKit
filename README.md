@@ -1,7 +1,11 @@
 # SFHDebugToolKit
 - Debug用ToolKitをまとめたもの
-- 現在はFLEXのみサポート
-    - FLEXとは（http://natsuapps.com/note/2014/08/flex-dev-tool.html）
+- 使用できるツール
+    - FLEXサポート
+        - FLEXとは（http://natsuapps.com/note/2014/08/flex-dev-tool.html）
+    - 録画機能
+        - 録画ボタンを押して停止する間の画面キャプチャをカメラロールに保存
+        - 画面の関係でアクションシートなど、メイン画面にないものは映らない可能性があります
 
 # サンプルプロジェクト
 ```
@@ -19,6 +23,10 @@ pod 'SFHDebugToolKit', :git => 'git@github.com:Econa77/SFHDebugToolKit.git', :co
 # 使用方法
 Objective-C
 ```
+#if
+#import "SFHDebugToolKit.h"
+#endif
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #if DEBUG
     [SFHDebugToolKit setupToolKit];
