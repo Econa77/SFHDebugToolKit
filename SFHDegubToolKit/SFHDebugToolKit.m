@@ -17,7 +17,6 @@
 
 @property (strong, nonatomic) UIControl *overlayView;
 @property (strong, nonatomic) UIButton *flexButton;
-@property (strong, nonatomic) UIButton *recordButton;
 
 @end
 
@@ -38,8 +37,6 @@
     if (self) {
         [self initView];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willChangeStatusBarFrame:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
-
     }
     return self;
 }
@@ -60,9 +57,7 @@
 
 #pragma mark - Class Methods
 + (void)setupToolKit {
-#if DEBUG
     [[self sharedToolKit] performSelector:@selector(setup) withObject:nil afterDelay:0.2f];
-#endif
 }
 
 + (BOOL)isIOS7 {
@@ -95,7 +90,6 @@
     if (!self.superview) {
         [self.overlayView addSubview:self];
         [self.overlayView addSubview:self.flexButton];
-        [self.overlayView addSubview:self.recordButton];
     }
     self.overlayView.hidden = YES;
 }
@@ -122,19 +116,11 @@
         }
     }
     
-    return CGRectMake(0, height - 50.0, width, 50.0f);
+    return CGRectMake(width - 50, height - 99.0, 50, 50.0f);
 }
 
 - (BOOL)canBecomeFirstResponder {
     return YES;
-}
-
-- (void)stopRecording {
-#if DEBUG 
-    if ([[SFHScreenRecorder sharedRecorder] isRecording]) {
-        [self switchRecorde];
-    }
-#endif
 }
 
 #pragma mark - NSNotification
@@ -144,8 +130,7 @@
     
     [UIView animateWithDuration:0.5f animations:^{
         self.overlayView.frame = [self viewFrame];
-        self.flexButton.frame = CGRectMake(CGRectGetWidth([self viewFrame]) - 50.0f, 0, 40.0, 40.0);
-        self.recordButton.frame =  CGRectMake(CGRectGetWidth([self viewFrame]) - 100.0f, 0, 40.0f, 40.0f);
+        self.flexButton.frame = CGRectMake(5, 0, 40.0, 40.0);
     }];
     
     if ([SFHDebugToolKit isIOS7]) {
@@ -173,10 +158,6 @@
     }
 }
 
-- (void)applicationDidEnterBackground:(NSNotification *)notification {
-    [self stopRecording];
-}
-
 #pragma mark - Share Methods
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (event.type == UIEventTypeMotion && event.subtype == UIEventSubtypeMotionShake) {
@@ -184,7 +165,6 @@
             [[SFHDebugToolKit sharedToolKit] show];
         } else {
             [[SFHDebugToolKit sharedToolKit] dismiss];
-            [self stopRecording];
         }
     }
 }
@@ -203,7 +183,7 @@
 - (UIButton *)flexButton {
     if(!_flexButton) {
         _flexButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        _flexButton.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 50.0f, 0, 40.0, 40.0);
+        _flexButton.frame = CGRectMake(5, 0, 40.0, 40.0);
         _flexButton.backgroundColor = [UIColor colorWithRed:0.9764 green:0.5294 blue:0.1137 alpha:1.0];
         _flexButton.layer.masksToBounds = YES;
         _flexButton.layer.cornerRadius = 20.0f;
@@ -215,38 +195,9 @@
     return _flexButton;
 }
 
-- (UIButton *)recordButton {
-    if(!_recordButton) {
-        _recordButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        _recordButton.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 100.0f, 0, 40.0f, 40.0f);
-        _recordButton.backgroundColor = [UIColor colorWithRed:0.8392 green:0.0470 blue:0.08235 alpha:1.0];
-        _recordButton.layer.masksToBounds = YES;
-        _recordButton.layer.cornerRadius = 20.0f;
-         _recordButton.titleLabel.font = [UIFont fontWithName:@"HiraKakuProN-W6" size:8.0f];
-        [_recordButton setTitle:@"録画開始" forState:UIControlStateNormal];
-        [_recordButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_recordButton addTarget:self action:@selector(switchRecorde) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _recordButton;
-}
-
 #pragma mark - IBAction
 - (void)showFLEX {
-#if DEBUG
     [[FLEXManager sharedManager] showExplorer];
-#endif
-}
-
-- (void)switchRecorde {
-#if DEBUG
-    if ([[SFHScreenRecorder sharedRecorder] isRecording]) {
-        [_recordButton setTitle:@"録画開始" forState:UIControlStateNormal];
-        [[SFHScreenRecorder sharedRecorder] stopRecording];
-    } else {
-        [_recordButton setTitle:@"録画停止" forState:UIControlStateNormal];
-        [[SFHScreenRecorder sharedRecorder] startRecording];
-    }
-#endif
 }
 
 @end
