@@ -92,6 +92,8 @@
         [self.overlayView addSubview:self.flexButton];
     }
     self.overlayView.hidden = YES;
+    
+    [self show];
 }
 
 - (void)show {
@@ -117,10 +119,6 @@
     }
     
     return CGRectMake(width - 45, height - 20 - 49, 40, 17);
-}
-
-- (BOOL)canBecomeFirstResponder {
-    return YES;
 }
 
 #pragma mark - NSNotification
@@ -154,17 +152,6 @@
             self.overlayView.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 45.0, 0, CGRectGetWidth(self.overlayView.frame), CGRectGetHeight(self.overlayView.frame));
         } else if (orientation == UIInterfaceOrientationLandscapeRight) {
             self.overlayView.frame = CGRectMake(0, 0, CGRectGetWidth(self.overlayView.frame), CGRectGetHeight(self.overlayView.frame));
-        }
-    }
-}
-
-#pragma mark - Share Methods
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    if (event.type == UIEventTypeMotion && event.subtype == UIEventSubtypeMotionShake) {
-        if (self.overlayView.hidden) {
-            [[SFHDebugToolKit sharedToolKit] show];
-        } else {
-            [[SFHDebugToolKit sharedToolKit] dismiss];
         }
     }
 }
