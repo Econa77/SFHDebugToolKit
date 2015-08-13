@@ -116,7 +116,7 @@
         }
     }
     
-    return CGRectMake(width - 50, height - 99.0, 50, 50.0f);
+    return CGRectMake(width - 45, height - 20 - 49, 40, 17);
 }
 
 - (BOOL)canBecomeFirstResponder {
@@ -130,7 +130,7 @@
     
     [UIView animateWithDuration:0.5f animations:^{
         self.overlayView.frame = [self viewFrame];
-        self.flexButton.frame = CGRectMake(5, 0, 40.0, 40.0);
+        self.flexButton.frame = CGRectMake(0, 0, 40.0, 17);
     }];
     
     if ([SFHDebugToolKit isIOS7]) {
@@ -151,7 +151,7 @@
         }
         self.overlayView.transform = CGAffineTransformMakeRotation(rotateAngle);
         if (orientation == UIInterfaceOrientationLandscapeLeft) {
-            self.overlayView.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 50.0f, 0, CGRectGetWidth(self.overlayView.frame), CGRectGetHeight(self.overlayView.frame));
+            self.overlayView.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 45.0, 0, CGRectGetWidth(self.overlayView.frame), CGRectGetHeight(self.overlayView.frame));
         } else if (orientation == UIInterfaceOrientationLandscapeRight) {
             self.overlayView.frame = CGRectMake(0, 0, CGRectGetWidth(self.overlayView.frame), CGRectGetHeight(self.overlayView.frame));
         }
@@ -183,10 +183,10 @@
 - (UIButton *)flexButton {
     if(!_flexButton) {
         _flexButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        _flexButton.frame = CGRectMake(5, 0, 40.0, 40.0);
+        _flexButton.frame = CGRectMake(0, 0, 40.0, 17);
         _flexButton.backgroundColor = [UIColor colorWithRed:0.9764 green:0.5294 blue:0.1137 alpha:1.0];
         _flexButton.layer.masksToBounds = YES;
-        _flexButton.layer.cornerRadius = 20.0f;
+        _flexButton.layer.cornerRadius = 3.0f;
         _flexButton.titleLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:10.0f];
         [_flexButton setTitle:@"FLEX" forState:UIControlStateNormal];
         [_flexButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
