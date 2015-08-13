@@ -8,10 +8,7 @@
 
 #import "SFHDebugToolKit.h"
 
-#if DEBUG
 #import "FLEXManager.h"
-#import "SFHScreenRecorder.h"
-#endif
 
 @interface SFHDebugToolKit()
 
